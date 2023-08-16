@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +23,11 @@ class MainActivity : AppCompatActivity() {
     {
         Intent(Intent.ACTION_VIEW,Uri.parse(s)).also { startActivity(it) }
     }
-    fun call()
+    fun call(n:String)
         {
+         Intent(Intent.ACTION_DIAL).setData(Uri.parse("$n")).also { startActivity(it)
 
+         }
         }
     fun calllog()
     {
